@@ -17,7 +17,8 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.17.3",
     "method-override": "^3.0.0",
-    "mysql2": "^3.4.2",
-    "nodemon": "^2.0.22"
+    "mysql2": "^3.4.5",
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.32.1"
   }
 }

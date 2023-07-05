@@ -8,6 +8,7 @@ let flash = require('express-flash');
 let session = require('express-session');
 const usersRouter = require('./src/routes/users');
 const staticRouter = require('./src/routes/static');
+const db = require('./src/services/database');
 
 let app = express();
 app.use(express.json());
@@ -30,6 +31,13 @@ app.use(flash());
 
 app.use('/', staticRouter);
 app.use('/users', usersRouter);
+
+//Database Connection
+db.authenticate().then(() => {
+    console.log('Database connected...');
+}).catch(err => {
+    console.log('Error: ' + err);
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
